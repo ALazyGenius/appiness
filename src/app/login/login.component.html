@@ -1,0 +1,66 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="jumbotron">
+      <div class="text-center">
+        <img class="appiness-logo" src="../../assets/images/appiness-logo.png" alt="header-logo">
+      </div>
+      <hr class="my-4">
+      <p class="lead text-center">Sign In to start spreading appiness!</p>
+      <div class="sign-in">
+        <div class="alert alert-danger" *ngIf="incorrectPwd">Please enter the correct password.</div>
+        <div class="alert alert-danger" *ngIf="unknownUser">User does not exist.</div>
+          <form [formGroup]="form" (ngSubmit)="onSubmit()" >
+            <div class="form-group has-name input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">
+                  <i class="fa fa-user fa-1x form-control-feedback"></i>
+                </span>
+              </div>
+              <input
+                formControlName="user"
+                type="text"
+                class="form-control"
+                placeholder="Username-Email-Phone Number"
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+              />
+            </div>
+            <div
+            class="alert alert-danger"
+            *ngIf="user.touched && user.invalid"
+          >
+            <div *ngIf="user.errors.required">Username/mobile number/email is required</div>
+          </div>
+            <div class="form-group has-password input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">
+                  <i class="fa fa-lock fa-1x form-control-feedback"></i>
+                </span>
+              </div>
+              <input
+                formControlName="password"
+                type="password"
+                class="form-control"
+                placeholder="Password"
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+              />
+            </div>
+            <div
+            class="alert alert-danger"
+            *ngIf="password.touched && password.invalid"
+          >
+            <div *ngIf="password.errors.required">Password is required</div>
+          </div>
+            <div class="new-user text-center">
+              <a class="new-user-link" href="/sign-up">
+                New User? Click Here to Sign Up!
+              </a>
+              <hr class="hr-rule-pwd">
+            </div>
+            <button type="submit" class="btn btn-primary-outline">Sign In</button>
+          </form>
+        </div>
+    </div>
+  </div>
+</div>

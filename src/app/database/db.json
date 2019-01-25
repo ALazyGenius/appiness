@@ -1,0 +1,24 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "admin",
+      "username": "admin",
+      "password": "admin1234",
+      "confirmPassword": "admin1234",
+      "email": "admin@appiness.com",
+      "mobileNumber": "1234567890",
+      "address": "23 Boulevard, Park Avenue Street, Eidunburg, London"
+    },
+    {
+      "name": "Engineer",
+      "username": "engineer",
+      "email": "engineer@gmail.com",
+      "password": "x2z@dG1a",
+      "confirmPassword": "x2z@dG1a",
+      "mobileNumber": 8585952877,
+      "address": "A16-1001, Megapolis Sparklet",
+      "id": 2
+    }
+  ]
+}

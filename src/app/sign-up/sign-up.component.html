@@ -1,0 +1,184 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="jumbotron">
+      <div class="text-center">
+        <img
+          class="appiness-logo"
+          src="../../assets/images/appiness-logo.png"
+          alt="header-logo"
+        />
+      </div>
+      <hr class="my-4" />
+      <p class="lead text-center">Sign Up to be a member</p>
+      <div class="sign-up">
+        <div class="alert alert-danger" *ngIf="passwordDontMatchFlag">
+          The Passwords don't match.
+        </div>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <div class="form-group has-name input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">
+                <i class="fa fa-user fa-1x form-control-feedback"></i>
+              </span>
+            </div>
+            <input
+              formControlName="name"
+              type="text"
+              class="form-control"
+              placeholder="Name"
+              aria-label="Name"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+          <div
+            class="alert alert-danger"
+            *ngIf="name.touched && name.invalid"
+          >
+            <div *ngIf="name.errors.required">Name is required</div>
+          </div>
+          <div class="form-group has-username-name input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">
+                <i class="fa fa-user fa-1x form-control-feedback"></i>
+              </span>
+            </div>
+            <input
+              formControlName="username"
+              type="text"
+              class="form-control"
+              placeholder="Username"
+              aria-label="Username"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+          <div
+            class="alert alert-danger"
+            *ngIf="username.touched && username.invalid"
+          >
+            <div *ngIf="username.errors.required">Username is required</div>
+          </div>
+          <div class="form-group has-email input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">
+                <i class="fa fa-envelope fa-1x form-control-feedback"></i>
+              </span>
+            </div>
+            <input
+              formControlName="email"
+              type="email"
+              class="form-control"
+              placeholder="Email"
+              aria-label="Username"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+          <div
+            class="alert alert-danger"
+            *ngIf="email.touched && email.invalid"
+          >
+            <div *ngIf="email.errors.required">Email is required</div>
+          </div>
+          <div class="form-group has-password input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">
+                <i class="fa fa-lock fa-1x form-control-feedback"></i>
+              </span>
+            </div>
+            <input
+              formControlName="password"
+              type="password"
+              class="form-control"
+              placeholder="Password"
+              aria-label="Username"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+          <div
+            class="alert alert-danger"
+            *ngIf="password.touched && password.invalid"
+          >
+            <div *ngIf="password.errors.required">Password is required</div>
+            <div *ngIf="password.errors?.pattern">
+              Password should be alphanumeric
+            </div>
+            <div *ngIf="password.errors.minlength">
+              Password should be minimum
+              {{ password.errors.minlength.requiredLength }} characters
+            </div>
+          </div>
+          <div class="form-group has-confirm-password input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">
+                <i class="fa fa-unlock-alt fa-1x form-control-feedback"></i>
+              </span>
+            </div>
+            <input
+              formControlName="confirmPassword"
+              type="password"
+              class="form-control"
+              placeholder="Confirm Password"
+              aria-label="confirmPassword"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+          <div
+            class="alert alert-danger"
+            *ngIf="confirmPassword.touched && confirmPassword.invalid"
+          >
+            <div *ngIf="confirmPassword.errors.required">
+              Please confirm the password
+            </div>
+            <div *ngIf="confirmPassword.errors.pattern">
+              Confirm Password should be alphanumeric
+            </div>
+            <div *ngIf="confirmPassword.errors.minlength">
+              Confirm Password should be minimum
+              {{ confirmPassword.errors.minlength.requiredLength }} characters
+            </div>
+          </div>
+          <div class="form-group has-mobile input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">
+                <i class="fa fa-mobile fa-1x form-control-feedback"></i>
+              </span>
+            </div>
+            <input
+              formControlName="mobileNumber"
+              type="number"
+              class="form-control"
+              placeholder="Mobile Number"
+              aria-label="mobile"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+          <div class="form-group has-address input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">
+                <i class="fa fa-address-book fa-1x form-control-feedback"></i>
+              </span>
+            </div>
+            <input
+              formControlName="address"
+              type="text"
+              class="form-control"
+              placeholder="Address"
+              aria-label="address"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+          <div
+            class="alert alert-danger"
+            *ngIf="address.touched && address.invalid"
+          >
+            <div *ngIf="address.errors.required">Address is required</div>
+            <div *ngIf="address.errors.maxlength">
+              Address can be only
+              {{ address.errors.maxlength.requiredLength }} characters long.
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary-outline">Sign Up</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

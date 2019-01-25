@@ -1,0 +1,32 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="jumbotron">
+      <div class="text-center">
+        <img
+          class="appiness-logo"
+          src="../../assets/images/appiness-logo.png"
+          alt="header-logo"
+        />
+      </div>
+      <hr class="my-4" />
+      <p class="lead text-center">Welcome to Appiness portal</p>
+      <div class="landing">
+        <div class="card">
+          <div class="card-header text-center">User Details:</div>
+          <div class="card-body">
+            <div class="shippment-details">
+              <p class="card-title">Username: {{ userData.username }}</p>
+              <p class="card-text">Name: {{ userData.name }}</p>
+              <p class="card-text">Email ID: {{ userData.email }}</p>
+              <p class="card-text">Mobile Number: {{ userData.mobileNumber }}</p>
+              <p class="card-text">Address: {{ userData.address }}</p>
+            </div>
+            <div class="text-center">
+              <a href="#" class="btn btn-primary">Print Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
